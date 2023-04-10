@@ -8,22 +8,42 @@
 
             Menu.ImprimirTela();
 
-            ConsoleKeyInfo key = Console.ReadKey(true);
+            ConsoleKey key = Console.ReadKey(true).Key;
 
             do
             {
-                if (key.Key == ConsoleKey.F1)
+                switch (key)
                 {
-                    Console.Clear();
-                    Header.Imprimir();
-                    Body.TelaCadastro();
+                    case ConsoleKey.F1:
+                        Console.Clear();
+                        Header.Imprimir();
+                        Body.TelaCadastro();
+                        break;
+                    case ConsoleKey.F2:
+                        Console.Clear();
+                        Header.Imprimir();                        break;
+                    case ConsoleKey.F3:
+                        Console.Clear();
+                        Header.Imprimir();
+                        break;
+                    case ConsoleKey.F7:
+                        Console.Clear();
+                        Header.Imprimir();
+                        break;
+                    case ConsoleKey.F8:
+                        Console.Clear();
+                        Header.Imprimir();
+                        break;
+                    case ConsoleKey.F9:
+                        Environment.Exit(0);
+                        break;
+                    default:
+                        key = Console.ReadKey(true).Key;
+                        break;
                 }
-                else
-                {
-                    key = Console.ReadKey(true);
-                }
+
             }
-            while (key.Key != ConsoleKey.Escape);
+            while (key != ConsoleKey.Escape);
 
         }
     }

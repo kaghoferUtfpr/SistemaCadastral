@@ -23,8 +23,25 @@ namespace SistemaCadastral
             Console.WriteLine(l5);
             Console.WriteLine(l6);
 
-            ConsoleKeyInfo key = Console.ReadKey(true);
+            ConsoleKey key = Console.ReadKey(true).Key;
 
+            switch (key)
+            {
+                case ConsoleKey.F1:
+                    break;
+                case ConsoleKey.F2:
+                    break;
+                case ConsoleKey.F3:
+                    break;
+                case ConsoleKey.F5:
+                    break;
+                case ConsoleKey.F9:
+                    Environment.Exit(0);
+                    break;
+                default:
+                    key = Console.ReadKey(true).Key;
+                    break;
+            }
         }
 
     }
