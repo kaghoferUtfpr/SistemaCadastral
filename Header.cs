@@ -22,7 +22,6 @@ namespace SistemaCadastral
             Console.Write(agora.ToString("dd/MM/yyyy"));
             string str = new string('=', 120); 
             Console.WriteLine(str);
-            Console.WriteLine("dfjkfdkjfdhlk");
 
         }
     }

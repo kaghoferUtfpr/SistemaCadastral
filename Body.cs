@@ -8,10 +8,6 @@ namespace SistemaCadastral
 {
     public class Body
     {
-        public static void TelaMenu()
-        {
-            Console.WriteLine();
-        }
         public static void TelaCadastro()
         {
             string l1 = "Registro....: 1 de <N>";
@@ -26,6 +22,9 @@ namespace SistemaCadastral
             Console.WriteLine(l4);
             Console.WriteLine(l5);
             Console.WriteLine(l6);
+
+            ConsoleKeyInfo key = Console.ReadKey(true);
+
         }
 
     }
