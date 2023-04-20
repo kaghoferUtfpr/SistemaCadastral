@@ -12,9 +12,6 @@ namespace SistemaCadastral
         static int registros = 0;
         static string linhaRegistro = string.Empty;
 
-        //lista.Add();
-        //lista.Add();
-
         public static void TelaCadastro()
         {
             var li = Banco.lista;
@@ -150,7 +147,6 @@ namespace SistemaCadastral
                     case ConsoleKey.F3:
                         break;
                     case ConsoleKey.F5:
-                        Console.WriteLine("kldkldfklgkjd");
                         break;
                     case ConsoleKey.F9:
                         Environment.Exit(0);

@@ -10,7 +10,7 @@ namespace SistemaCadastral
     {
         public static void Imprimir()
         {
-            String nome = "Siste de Quinta";
+            String nome = "Sistema de Quinta";
 
             DateTime agora = DateTime.Now;
             Console.Write("Sisquinta");
