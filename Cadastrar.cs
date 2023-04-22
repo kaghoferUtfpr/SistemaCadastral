@@ -73,7 +73,12 @@ namespace CadastroV2
             Console.SetCursorPosition(l1.Length + 1, 6);
             registro.Titulo = Console.ReadLine();
 
+
             registros.Add(registro);
+
+            Console.SetCursorPosition(0, 29);
+            Console.Write("Msg: Registro incluído com sucesso.");
+            Task.Delay(2000).Wait();
 
             return registros;
 
