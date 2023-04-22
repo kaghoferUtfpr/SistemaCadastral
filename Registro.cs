@@ -29,7 +29,10 @@ namespace SistemaCadastral
 
         public override string? ToString()
         {
-            return $"Nome: {Nome}   CPF: {CPF}  RG: {RG}    Habilitação: {Habilitacao}  Titulo: {Titulo}";
+
+            
+
+            return $"Nome: {Nome} CPF: {CPF} \t\tRG: {RG} \t\tHabilitação: {Habilitacao}\t\tTitulo: {Titulo}";
         }
     }
 
