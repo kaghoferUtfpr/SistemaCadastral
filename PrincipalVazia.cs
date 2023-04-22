@@ -25,10 +25,22 @@ namespace CadastroV2
             Console.Write(agora.ToString("dd/MM/yyyy"));
             string str1 = new string('=', 120);
             Console.WriteLine(str1);
-            //Menu
-            string menu = "\nF1 – Cadastrar documentos\r\n" +
+
+            string[] arquivos = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.dat");
+            string menu;
+            if (arquivos.Length == 0)
+            {
+                menu = "\nF1 – Cadastrar documentos\r\n" +
+                "F9 – Sair";
+            }
+            else
+            {
+                menu = "\nF1 – Cadastrar documentos\r\n" +
                 "F7 – Carregar documentos\r\n" +
                 "F9 – Sair";
+            }
+
+            //Menu
             Console.WriteLine(menu);
 
             //Rodape
@@ -48,6 +60,7 @@ namespace CadastroV2
             Console.Write(strNivel);
             Console.SetCursorPosition(0, 29);
             Console.Write("Msg: " + msg);
+
 
 
             while (true)

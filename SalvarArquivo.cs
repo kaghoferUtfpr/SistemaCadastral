@@ -53,7 +53,8 @@ namespace CadastroV2
 
             Banco.Salvar(lista, nomeArquivo);
 
-            //Console.SetCursorPosition(mensagemArq.Length, 3);
+            Console.Clear();
+            Principal.ImprimePrincipal(lista);
 
 
             while (true)
@@ -61,24 +62,8 @@ namespace CadastroV2
                 ConsoleKey key = Console.ReadKey(true).Key;
                 switch (key)
                 {
-                    case ConsoleKey.F1:
-                        Console.Clear();
-                        break;
-                    case ConsoleKey.F2:
-                        Console.Clear();
-
-                        break;
-                    case ConsoleKey.F3:
-                        Console.Clear();
-                        break;
-                    case ConsoleKey.F7:
-                        Console.Clear();
-                        break;
-                    case ConsoleKey.F8:
-                        Console.Clear();
-                        break;
                     case ConsoleKey.F9:
-                        Console.Clear();    
+                        Console.Clear();
                         Principal.ImprimePrincipal(lista);
                         break;
                 }
