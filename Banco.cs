@@ -13,15 +13,15 @@ namespace SistemaCadastral
     {
         public static List<Registro> lista = new List<Registro>();
         
-        public static void Salvar(Registro registro)
+        public static void Salvar(List<Registro> lista, string nome)
         {
-            string json = JsonSerializer.Serialize(registro);
-            File.WriteAllText(Directory.GetCurrentDirectory() + "/arquivo.json", json);
+            string json = JsonSerializer.Serialize(lista);
+            File.WriteAllText(Directory.GetCurrentDirectory() + $"/{nome}.dat", json);
         }
 
-        public static List<Registro> Listar()
+        public static List<Registro> BuscarRegistros(string nome)
         {
-            string jsonLido = File.ReadAllText(Directory.GetCurrentDirectory() + "/arquivo.json");
+            string jsonLido = File.ReadAllText(Directory.GetCurrentDirectory() + $"/{nome}.dat");
             List<Registro> registros = JsonSerializer.Deserialize<List<Registro>>(jsonLido);
             return registros;
         }

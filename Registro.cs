@@ -14,6 +14,10 @@ namespace SistemaCadastral
         public string Habilitacao { get; set; }
         public string Titulo { get; set; }
 
+        public Registro()
+        {
+        }
+
         public Registro(string nome, string cPF, string rG, string habilitacao, string titulo)
         {
             Nome = nome;
@@ -21,6 +25,11 @@ namespace SistemaCadastral
             RG = rG;
             Habilitacao = habilitacao;
             Titulo = titulo;
+        }
+
+        public override string? ToString()
+        {
+            return $"Nome: {Nome}   CPF: {CPF}  RG: {RG}    Habilitação: {Habilitacao}  Titulo: {Titulo}";
         }
     }
 
