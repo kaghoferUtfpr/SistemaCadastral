@@ -1,14 +1,20 @@
-﻿namespace SistemaCadastral
+﻿using SistemaCadastral;
+
+namespace CadastroV2
 {
     internal class Program
     {
         static void Main(string[] args)
         {
-            Header.Imprimir();
-
-            string menu = "\nF1 – Cadastrar documentos\r\nF2 – Pesquisar documentos\r\nF3 – Listar documentos\r\n\nF7 – Carregar documentos\r\nF8 – Salvar documentos\r\n\nF9 – Sair";
-            Console.WriteLine(menu);
-
+            List<Registro> lista = Banco.lista;
+            if (lista.Count == 0)
+            {
+                PrincipalVazia.ImprimePrincipalVazia(lista);
+            }
+            else
+            {
+                Principal.ImprimePrincipal(lista);
+            }
 
         }
     }
