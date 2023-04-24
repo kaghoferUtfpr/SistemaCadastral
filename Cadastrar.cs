@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic;
 using Microsoft.Win32;
 using SistemaCadastral;
+using SistemaCadastral.utils;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -66,14 +67,80 @@ namespace CadastroV2
             registro.Nome = Console.ReadLine();
             Console.SetCursorPosition(l1.Length + 1, 3);
             registro.RG = Console.ReadLine();
+            bool validar = Validador.ValidarRG(registro.RG);
+            if (!validar)
+            {
+                do
+                {
+                    Console.SetCursorPosition(0, 29);
+                    Console.Write("Msg: RG Inválido.");
+                    Task.Delay(2000).Wait();
+                    Console.SetCursorPosition(0, 29);
+                    Console.Write("Msg:             ");
+                    Console.SetCursorPosition(l1.Length + 1, 3);
+                    registro.RG = Console.ReadLine();
+                    validar = Validador.ValidarRG(registro.RG);
+                } while (!validar);
+
+            }
             Console.SetCursorPosition(l1.Length + 1, 4);
             registro.CPF = Console.ReadLine();
+            validar = Validador.ValidarCPF(registro.CPF);
+            if (!validar)
+            {
+                do
+                {
+                    Console.SetCursorPosition(0, 29);
+                    Console.Write("Msg: CPF Inválido.");
+                    Task.Delay(2000).Wait();
+                    Console.SetCursorPosition(0, 29);
+                    Console.Write("Msg:              ");
+                    Console.SetCursorPosition(l1.Length + 1, 4);
+                    registro.RG = Console.ReadLine();
+                    validar = Validador.ValidarCPF(registro.CPF);
+                } while (!validar);
+            }
+
             Console.SetCursorPosition(l1.Length + 1, 5);
             registro.Habilitacao = Console.ReadLine();
+            validar = Validador.ValidarCNH(registro.Habilitacao);
+            if (!validar)
+            {
+                do
+                {
+                    Console.SetCursorPosition(0, 29);
+                    Console.Write("Msg: CNH Inválido.");
+                    Task.Delay(2000).Wait();
+                    Console.SetCursorPosition(0, 29);
+                    Console.Write("Msg:              ");
+                    Console.SetCursorPosition(l1.Length + 1, 5);
+                    registro.RG = Console.ReadLine();
+                    validar = Validador.ValidarCNH(registro.Habilitacao);
+                } while (!validar);
+            }
             Console.SetCursorPosition(l1.Length + 1, 6);
             registro.Titulo = Console.ReadLine();
+            validar = Validador.ValidarTituloEleitor(registro.Titulo);
+            if (!validar)
+            {
+                do
+                {
+                    Console.SetCursorPosition(0, 29);
+                    Console.Write("Msg: Título Inválido.");
+                    Task.Delay(2000).Wait();
+                    Console.SetCursorPosition(0, 29);
+                    Console.Write("Msg:              ");
+                    Console.SetCursorPosition(l1.Length + 1, 6);
+                    registro.RG = Console.ReadLine();
+                    validar = Validador.ValidarTituloEleitor(registro.Titulo);
+                } while (!validar);
+            }
 
             registros.Add(registro);
+
+            Console.SetCursorPosition(0, 29);
+            Console.Write("Msg: Registro incluído com sucesso.");
+            Task.Delay(2000).Wait();
 
             return registros;
 

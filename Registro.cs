@@ -8,6 +8,7 @@ namespace SistemaCadastral
 {
     public class Registro
     {
+        public int RegistroID { get; set; }
         public string Nome { get; set; }
         public string CPF { get; set; }
         public string RG { get; set; }
@@ -29,7 +30,10 @@ namespace SistemaCadastral
 
         public override string? ToString()
         {
-            return $"Nome: {Nome}   CPF: {CPF}  RG: {RG}    Habilitação: {Habilitacao}  Titulo: {Titulo}";
+
+            
+
+            return $"Nome: {Nome} CPF: {CPF} \t\tRG: {RG} \t\tHabilitação: {Habilitacao}\t\tTitulo: {Titulo}";
         }
     }
 

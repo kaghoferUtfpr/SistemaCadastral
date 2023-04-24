@@ -27,7 +27,24 @@ namespace CadastroV2
 
             Console.WriteLine("Lista de Registros: ");
 
-            lista.ForEach(x => Console.WriteLine(x));
+            Console.SetCursorPosition(0, 4);
+            lista.ForEach(x =>
+            {
+                Console.SetCursorPosition(0, Console.GetCursorPosition().Top);
+                Console.Write($"Nome: {x.Nome}");
+                Console.SetCursorPosition(40, Console.GetCursorPosition().Top);
+                Console.Write($"CPF: {x.CPF}");
+                Console.SetCursorPosition(60, Console.GetCursorPosition().Top);
+                Console.Write($"RG: {x.RG}");
+                Console.SetCursorPosition(80, Console.GetCursorPosition().Top);
+                Console.Write($"Habilitação: {x.Habilitacao}");
+                Console.SetCursorPosition(100, Console.GetCursorPosition().Top);
+                Console.Write($"Título: {x.Titulo}");
+                Console.WriteLine();
+            });
+
+
+
 
             //Menu Opcoes
             Console.SetCursorPosition(0, 26);

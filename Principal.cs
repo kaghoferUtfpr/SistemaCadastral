@@ -25,12 +25,27 @@ namespace CadastroV2
             string str1 = new string('=', 120);
             Console.WriteLine(str1);
             //Menu
-            string menu = "\nF1 – Cadastrar documentos\r\n" +
+            string menu;
+            string[] arquivos = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.dat");
+            if (arquivos.Length == 0)
+            {
+                menu = "\nF1 – Cadastrar documentos\r\n" +
+                "F2 – Pesquisar documentos\r\n" +
+                "F3 – Listar documentos\r\n\n" +
+                "F8 – Salvar documentos\r\n\n" +
+                "F9 – Sair";
+            }
+            else
+            {
+                menu = "\nF1 – Cadastrar documentos\r\n" +
                 "F2 – Pesquisar documentos\r\n" +
                 "F3 – Listar documentos\r\n\n" +
                 "F7 – Carregar documentos\r\n" +
                 "F8 – Salvar documentos\r\n\n" +
                 "F9 – Sair";
+            }
+
+                
             Console.WriteLine(menu);
 
             //Rodape
