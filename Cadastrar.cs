@@ -78,6 +78,8 @@ namespace CadastroV2
                     Console.SetCursorPosition(0, 29);
                     Console.Write("Msg:             ");
                     Console.SetCursorPosition(l1.Length + 1, 3);
+                    Console.Write(new string(' ',50));
+                    Console.SetCursorPosition(l1.Length + 1, 3);
                     registro.RG = Console.ReadLine();
                     validar = Validador.ValidarRG(registro.RG);
                 } while (!validar);
@@ -95,6 +97,8 @@ namespace CadastroV2
                     Task.Delay(2000).Wait();
                     Console.SetCursorPosition(0, 29);
                     Console.Write("Msg:              ");
+                    Console.SetCursorPosition(l1.Length + 1, 4);
+                    Console.Write(new string(' ', 50));
                     Console.SetCursorPosition(l1.Length + 1, 4);
                     registro.RG = Console.ReadLine();
                     validar = Validador.ValidarCPF(registro.CPF);
@@ -114,6 +118,8 @@ namespace CadastroV2
                     Console.SetCursorPosition(0, 29);
                     Console.Write("Msg:              ");
                     Console.SetCursorPosition(l1.Length + 1, 5);
+                    Console.Write(new string(' ', 50));
+                    Console.SetCursorPosition(l1.Length + 1, 5);
                     registro.RG = Console.ReadLine();
                     validar = Validador.ValidarCNH(registro.Habilitacao);
                 } while (!validar);
@@ -131,7 +137,9 @@ namespace CadastroV2
                     Console.SetCursorPosition(0, 29);
                     Console.Write("Msg:              ");
                     Console.SetCursorPosition(l1.Length + 1, 6);
-                    registro.RG = Console.ReadLine();
+                    Console.Write(new string(' ', 50));
+                    Console.SetCursorPosition(l1.Length + 1, 6);
+                    registro.Titulo = Console.ReadLine();
                     validar = Validador.ValidarTituloEleitor(registro.Titulo);
                 } while (!validar);
             }

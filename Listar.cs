@@ -32,11 +32,11 @@ namespace CadastroV2
             {
                 Console.SetCursorPosition(0, Console.GetCursorPosition().Top);
                 Console.Write($"Nome: {x.Nome}");
-                Console.SetCursorPosition(40, Console.GetCursorPosition().Top);
+                Console.SetCursorPosition(35, Console.GetCursorPosition().Top);
                 Console.Write($"CPF: {x.CPF}");
-                Console.SetCursorPosition(60, Console.GetCursorPosition().Top);
+                Console.SetCursorPosition(55, Console.GetCursorPosition().Top);
                 Console.Write($"RG: {x.RG}");
-                Console.SetCursorPosition(80, Console.GetCursorPosition().Top);
+                Console.SetCursorPosition(70, Console.GetCursorPosition().Top);
                 Console.Write($"Habilitação: {x.Habilitacao}");
                 Console.SetCursorPosition(100, Console.GetCursorPosition().Top);
                 Console.Write($"Título: {x.Titulo}");

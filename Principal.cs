@@ -78,7 +78,7 @@ namespace CadastroV2
                         break;
                     case ConsoleKey.F2:
                         Console.Clear();
-
+                        Pesquisar.PesquisarRegistro(registros);
                         break;
                     case ConsoleKey.F3:
                         Console.Clear();
