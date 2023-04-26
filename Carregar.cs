@@ -54,20 +54,28 @@ namespace CadastroV2
 
             Console.SetCursorPosition(0, 5);
             Console.WriteLine("Lista de arquivos existentes: ");
-            
-            foreach(var linha in nomesArquivos) Console.WriteLine(linha);
+
+            foreach (var linha in nomesArquivos) Console.WriteLine(linha);
 
             Console.SetCursorPosition(0, 2);
             Console.WriteLine();
             string mensagemArq = "Insira o nome do arquivo sem a extenção ou digite sair para voltar ao menu principal: ";
             Console.Write(mensagemArq);
-            string nomeArquivo = Console.ReadLine();
-            if(!nomesArquivos.Contains(nomeArquivo))
+            string nomeArquivo = Console.ReadLine().ToLower();
+            bool existe = nomesArquivos.Where(f => f.Equals(nomeArquivo)).Any();
+
+            while (!existe || nomeArquivo.Equals("sair"))
             {
                 msg = nomeArquivo + " não existe";
                 Console.SetCursorPosition(0, 29);
                 Console.Write("Msg: " + msg);
+                Console.SetCursorPosition(mensagemArq.Length, 3);
+                Console.Write("                                     ");
+                Console.SetCursorPosition(mensagemArq.Length, 3);
+                nomeArquivo = Console.ReadLine().ToLower();
+                existe = nomesArquivos.Where(f => f.Equals(nomeArquivo)).Any();
             }
+
             if (nomeArquivo.Equals("sair"))
             {
                 Console.Clear();
@@ -93,7 +101,7 @@ namespace CadastroV2
                 Console.SetCursorPosition(0, 29);
                 Console.Write("Msg:                                                       ");
             }
-            
+
             List<Registro> lista = Banco.BuscarRegistros(nomeArquivo);
 
             Console.Clear();

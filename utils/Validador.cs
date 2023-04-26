@@ -22,25 +22,6 @@ namespace SistemaCadastral.utils
                 return false;
             }
 
-            if (rg.Length == 9)
-            {
-                int[] pesos = { 2, 3, 4, 5, 6, 7, 8, 9 };
-                int soma = 0;
-                for (int i = 0; i < 8; i++)
-                {
-                    soma += int.Parse(rg[i].ToString()) * pesos[i];
-                }
-                int digito = 11 - (soma % 11);
-                if (digito >= 10)
-                {
-                    digito = 0;
-                }
-                if (int.Parse(rg.Substring(8, 1)) != digito)
-                {
-                    return false;
-                }
-            }
-
             return true;
         }
 
